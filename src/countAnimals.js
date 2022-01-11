@@ -1,4 +1,3 @@
-const data = require('../data/zoo_data');
 const { species } = require('../data/zoo_data');
 
 function countAnimals(animal) {
@@ -9,6 +8,8 @@ function countAnimals(animal) {
     }, {});
     return numeroDeAnimais;
   }
+  const findSpecie = species.find((specie) => animal.specie === specie.name).residents.length;
+  return findSpecie;
 }
 
 module.exports = countAnimals;
