@@ -10,15 +10,23 @@ function countEntrants(entrants) {
 }
 
 function calculateEntry(entrants) {
-  if (entrants === undefined || Object.keys(entrants).length === 0); return 0;
-  // Eu tava tentando passar entrant.length === 0 para representar um objeto vazio, mas não fazia sentido.
-  // Antes disso eu tava usando dois ifs, mas posso fazer os dois em um só.
-  // if (entrants === undefined) {
-  //   return 0;
-  // }
-  // if (Object.keys(entrants).length === 0) {
-  //   return 0;
-  // }
+  if (entrants === undefined || Object.keys(entrants).length === 0) {
+    return 0;
+    // Eu tava tentando passar entrant.length === 0 para representar um objeto vazio, mas não fazia sentido.
+    // Antes disso eu tava usando dois ifs, mas posso fazer os dois em um só.
+  }
+
+  const visitantes = countEntrants(entrants);
+  // Estou usando a função lá de cima que trás o cálculo dos visitantes.
+  // Colocando o cursor do mouse em cima de visitantes, consigo ver que é um objeto com chaves child, adult e senior.
+
+  const childPrice = visitantes.child * data.prices.child;
+  // visitantes.child é o número de crianças. Multiplico isso pelo valor do ingresso para criança, que é 20,99.
+  const adultPrice = visitantes.adult * data.prices.adult;
+  const seniorPrice = visitantes.senior * data.prices.senior;
+
+  return childPrice + adultPrice + seniorPrice;
+  // Vai retornar o ''faturamento'' do parque no dia, de acordo com o número de visitantes e o tipo (criança, adulto, senhor).
 }
 
 module.exports = { calculateEntry, countEntrants };
