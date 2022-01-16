@@ -7,6 +7,7 @@ function countEntrants(entrants) {
   // Aqui estou filtrando as pessoas desse array entrant pelas idades e pegando a quantidade de quantos tem de cada uma das faixa etátias com o .length
   return { child, adult, senior };
   // Vai retornar um objeto já com a chave e seus valores.
+  // Explicação do Daniel: ''Se você não diz qual será a chave ele já coloca o nome da chave igual ao nome da variável. É um recurso do JavaScript.'' Por isso eu não tava conseguindo colocar return { 'child:' child, 'adult:' adult, ....
 }
 
 function calculateEntry(entrants) {
